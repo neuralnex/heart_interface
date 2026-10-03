@@ -7,15 +7,11 @@ export const ETHNICITY_OPTIONS = [
   "Other",
 ] as const;
 export const YES_NO = ["Yes", "No"] as const;
-export const RESTING_ECG_OPTIONS = [
-  "Normal",
-  "ST-T Abnormality",
-  "Left Ventricular Hypertrophy",
-] as const;
-export const SLOPE_OPTIONS = ["Upsloping", "Flat", "Downsloping"] as const;
+export const RESTING_ECG_OPTIONS = ["Normal", "Abnormal"] as const;
+export const SLOPE_OPTIONS = ["Up", "Flat", "Down"] as const;
 export const THAL_OPTIONS = ["Normal", "Fixed", "Reversible"] as const;
 export const SMOKING_OPTIONS = ["Never", "Former", "Current"] as const;
-export const ALCOHOL_OPTIONS = ["None", "Light", "Moderate", "Heavy"] as const;
+export const ALCOHOL_OPTIONS = ["None", "Low", "Moderate", "High"] as const;
 export const ACTIVITY_OPTIONS = ["Low", "Moderate", "High"] as const;
 export const DIET_OPTIONS = ["Poor", "Fair", "Good", "Excellent"] as const;
 export const STRESS_OPTIONS = ["Low", "Moderate", "High"] as const;
@@ -80,11 +76,11 @@ export const SAMPLE_LOW_RISK: Metrics = {
   bmi: 22.4,
   resting_ecg: "Normal",
   oldpeak: 0.2,
-  slope: "Upsloping",
+  slope: "Up",
   major_vessels: 0,
   thalassemia: "Normal",
   smoking: "Never",
-  alcohol_consumption: "Light",
+  alcohol_consumption: "Low",
   physical_activity: "High",
   sleep_duration: 7.5,
   diet_quality: "Good",
