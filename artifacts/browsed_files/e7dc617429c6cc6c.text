@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+transformers>=4.51.0
+torch
+torchvision
+accelerate
+pillow
+pydantic
+python-multipart
+timm
+bitsandbytes
+pandas
+huggingface_hub
+python-dotenv
+openai

@@ -1,0 +1,19 @@
+from huggingface_hub import snapshot_download
+import os
+
+# Keep the download set aligned with the active inference pipeline.
+# ECG image analysis and TabFM remain local; the reasoning/report synthesis runs through Groq.
+MODELS = [
+    "yasserrmd/GemmaECG-Vision",
+    "google/tabfm-1.0.0-pytorch",
+]
+
+def download():
+    print("Downloading model weights to cache...")
+    for model in MODELS:
+        print(f"Downloading {model}...")
+        snapshot_download(repo_id=model)
+    print("All models downloaded successfully.")
+
+if __name__ == "__main__":
+    download()

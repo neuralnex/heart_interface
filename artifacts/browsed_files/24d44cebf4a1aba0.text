@@ -1,0 +1,38 @@
+import torch
+from transformers import AutoProcessor, AutoModelForMultimodalLM, BitsAndBytesConfig
+
+DTYPE = torch.float16 if torch.cuda.is_available() else torch.float32
+
+
+def preload():
+    print("Preloading models to disk...")
+
+    quant_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_compute_dtype=DTYPE,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+    )
+
+    print("Preloading GemmaECG-Vision...")
+    AutoProcessor.from_pretrained("yasserrmd/GemmaECG-Vision")
+    AutoModelForMultimodalLM.from_pretrained(
+        "yasserrmd/GemmaECG-Vision",
+        device_map="cpu",  # Use CPU for build time to avoid needing GPU in Docker build
+        quantization_config=quant_config,
+        low_cpu_mem_usage=True,
+    )
+
+    print("Preloading Google TabFM...")
+    try:
+        from tabfm import tabfm_v1_0_0_pytorch as tabfm_v1_0_0
+        tabfm_v1_0_0.load(model_type="classification")
+    except Exception as e:
+        print(f"Warning: Could not preload TabFM model: {e}")
+
+    print("Groq is used for reasoning/report synthesis and does not require local model preload.")
+    print("All models preloaded successfully.")
+
+
+if __name__ == "__main__":
+    preload()

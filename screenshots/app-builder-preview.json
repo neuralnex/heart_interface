@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Atria",
+      "hasCanvas": false,
+      "bodyTextLen": 1440,
+      "bodyTextHash": "c6aae95990b822007c873c4bdccb34bd8d8b6a88a66a9e95a1df20e1804ccd2c",
+      "bodyTextPrefix": "Atria Heart disease diagnostic console GemmaECG · TabFM · BioMis",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Atria",
+      "hasCanvas": false,
+      "bodyTextLen": 1517,
+      "bodyTextHash": "683f267abd1ec5b648e694af9a7cfc3305626a39f009566e1c3467d3b05d69a4",
+      "bodyTextPrefix": "Atria Heart disease diagnostic console GemmaECG · TabFM · BioMis",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
